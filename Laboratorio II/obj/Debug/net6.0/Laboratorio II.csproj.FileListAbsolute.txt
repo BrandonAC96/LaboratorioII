@@ -1,0 +1,15 @@
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\bin\Debug\net6.0\Laboratorio II.exe
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\bin\Debug\net6.0\Laboratorio II.deps.json
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\bin\Debug\net6.0\Laboratorio II.runtimeconfig.json
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\bin\Debug\net6.0\Laboratorio II.dll
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\bin\Debug\net6.0\Laboratorio II.pdb
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.csproj.AssemblyReference.cache
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.AssemblyInfoInputs.cache
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.AssemblyInfo.cs
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.csproj.CoreCompileInputs.cache
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.dll
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\refint\Laboratorio II.dll
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.pdb
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\Laboratorio II.genruntimeconfig.cache
+D:\Documentos\Kinal\Kinal\Net\Laboratorio II\obj\Debug\net6.0\ref\Laboratorio II.dll
