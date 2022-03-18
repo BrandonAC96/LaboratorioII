@@ -2,78 +2,58 @@
 using Laboratorio_II.Kinal.Lab.Interfaces;
 public class Program
 {
+    private static List<Persona> ListaGeneral = new List<Persona>();
     public static void Main(string[] args)
     {
-        List<Persona> listaPersonas = new List<Persona>();
-        Persona alumno1 = new Alumno();
-        ((Alumno)alumno1).Carne = "0001K";
-        ((Alumno)alumno1).NumeroCreditos = 10;
-        ((Alumno)alumno1).Uuid = "300255588";
-        ((Alumno)alumno1).Apellidos = "Paz";
-        ((Alumno)alumno1).Nombres = "Jose";
-        ((Alumno)alumno1).Email = "jpaz@gmail.com";
+        Alumno CarlosBatres = new Alumno("111", "Batres Rosas", "Carlos Jose", "cbatres@gmail.com", "221155", 30);
+        Profesor MiguelDueñas = new Profesor("222", "Duenas Chavez", "Miguel Angel", "mdueñas@gmail.com", "300255448870101", "Maestro de programacion");
 
-        Persona profesor1 = new Profesor();
-        ((Profesor)profesor1).Cui = "454564642341";
-        ((Profesor)profesor1).Cargo = "Maestro 1";
-        ((Profesor)profesor1).Uuid = "456456465";
-        ((Profesor)profesor1).Apellidos = "Hernandez";
-        ((Profesor)profesor1).Nombres = "Stiven";
-        ((Profesor)profesor1).Email = "sher@gmail.com";
+        Console.WriteLine("Procesado datos...");
+        OperarRegistro(CarlosBatres);
+        OperarRegistro(MiguelDueñas);
 
-        listaPersonas.Add(alumno1);
-        listaPersonas.Add(profesor1);
-        ListaGeneral(listaPersonas);
+        RegistrarAsistencia(CarlosBatres);
+        RegistrarAsistencia(MiguelDueñas);
 
-        static void ListaGeneral(List<Persona> listaPersonas)
+        VerMisDatos(CarlosBatres);
+        VerMisDatos(MiguelDueñas);
+
+        QuitarAsignatura(CarlosBatres,"Calculo");
+        QuitarAsignatura(MiguelDueñas,"Programacion");
+    }
+
+    public static void QuitarAsignatura(Persona elemento, string asignatura)
     {
-        Console.WriteLine($"Datos:");
-        foreach(Persona elemento in listaPersonas)
+        ((IOperaciones)elemento).EliminarAsignatura(asignatura);
+    }
+
+    public static void VerMisDatos(Persona elemento)
+    {
+        if (elemento is Alumno)
         {
-            if(elemento is Alumno)
-            {
-                Console.WriteLine($"Datos {((Alumno)elemento).Carne} {elemento.Apellidos} {elemento.Nombres}");
-            }
-            else if(elemento is Profesor)
-            {   
-                Console.WriteLine($"Datos {((Profesor)elemento).Cui} {elemento.Apellidos} {elemento.Nombres}");
-            }
+            Alumno auxiliar = (Alumno)elemento;
+            auxiliar.ListarMisDatos(auxiliar.Carne);
         }
-    }
-    static void OperarRegistro(Persona elemento)
-    {
-        
-    }
-    static void RegistrarAsistencia(List<Persona> personas)
-    {
-        foreach(Persona elemento in personas)
+        else if (elemento is Profesor)
         {
-            if(elemento is Alumno)
-            {
-                ((Alumno)elemento).TomarAsistencia();
-            }
-            else if(elemento is Profesor)
-            {
-                ((Profesor)elemento).TomarAsistencia();
-            }
-        }
-    }
-    
-    static void VerMisDatos(Persona elemento)
-    {
-        Console.WriteLine($"Datos {((Alumno)elemento).Carne} {elemento.Apellidos} {elemento.Nombres}");
-        Console.WriteLine($"Datos {((Profesor)elemento).Cui} {elemento.Apellidos} {elemento.Nombres}");
-    }
-
-     static void QuitarAsignatura(Persona elemento)
-    {
-    
-        {
-
+            Profesor auxiliar = (Profesor)elemento;
+            auxiliar.ListarMisDatos(auxiliar.Cui);
         }
     }
 
+    public static void RegistrarAsistencia(Persona elemento)
+    {
+        foreach (Persona registro in ListaGeneral)
+        {
+            if (registro.Uuid == elemento.Uuid)
+            {
+                elemento.TomarAsistencia();
+            }
+        }
     }
-    
+    public static void OperarRegistro(Persona elemento)
+    {
+        ListaGeneral.Add(elemento);
+    }
 }
 

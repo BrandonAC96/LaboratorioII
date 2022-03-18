@@ -7,20 +7,6 @@ namespace Laboratorio_II.Kinal.Lab.Entities
     {
         public string Cui { get; set; }
         public string Cargo { get; set; }
-        public override void TomarAsistencia()
-        {
-
-        }
-
-        public void ListarMisDatos(string Identificador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool EliminarAsignatura(string Asignatura)
-        {
-            throw new NotImplementedException();
-        }
 
         public Profesor() : base()
         {
@@ -28,15 +14,26 @@ namespace Laboratorio_II.Kinal.Lab.Entities
         }
 
         public Profesor(string uuid, string apellidos, string nombres, string email, string cui, string cargo)
+            : base(uuid, apellidos, nombres, email)
         {
             this.Cui = cui;
             this.Cargo = cargo;
         }
 
-        override
-        public string ToString()
-        { 
-          return this.Cui;  
+        public bool EliminarAsignatura(string asignatura)
+        {
+            Console.WriteLine($"Se ha elminado la asignatura {this.Apellidos} {this.Nombres}");
+            return true;
+        }
+
+        public void ListarMisDatos(string identificador)
+        {
+            Console.WriteLine($"{this.Uuid} {this.Apellidos} {this.Nombres} {this.Cargo}");
+        }
+
+        public override void TomarAsistencia()
+        {
+            Console.WriteLine($"Tomando Asistencia de {this.Apellidos} {this.Nombres}");
         }
     }
 }
